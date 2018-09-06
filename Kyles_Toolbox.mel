@@ -1,0 +1,41 @@
+global proc MoveObjects ()
+{
+      string $objectsToMove[] = `ls -sl`;
+      
+      
+      for($items in $objectsToMove)
+     {
+            float $xRand = rand(-30,30);
+            float $zRand = rand(-30,3);
+
+    float $xPos = `getAttr($items + ".tx")`;
+    float $zPos = `getAttr($items + ".tz")`;
+    setAttr($items + ".tx") ($xPos*0 + $xRand);
+    setAttr($items + ".tz") ($zPos*0 + $zRand);
+     }  
+     return;
+}
+
+// Window Layouts
+//
+
+window -title "Kyle's Toolbox" -menuBar true -w 300;
+    
+    menu -label "File";
+        menuItem -l "I'm trying to learn here";
+
+    columnLayout -columnOffset both 5.7;
+    
+        frameLayout -collapsable true -label "Parameters"
+        
+            columnLayout;
+            
+                
+                attrFieldGrp -l "Rando Range(UNDER CONSTRUCTION)";
+                button -l "RanDoMize" -c MoveObjects;
+             
+            setParent ..;
+        setParent ..;
+     
+showWindow;
+
