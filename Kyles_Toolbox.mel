@@ -16,6 +16,19 @@ global proc MoveObjects ()
      return;
 }
 
+proc DuplicateObjects ()
+{
+    int $numDups = 20;
+    string $objectsToMove[] = `ls -sl`;
+     
+    for ( $i=0; $i<20; ++$i ){
+        duplicate -rr;
+    } 
+}
+
+// Global Variables
+//
+
 // Window Layouts
 //
 
@@ -31,9 +44,11 @@ window -title "Kyle's Toolbox" -menuBar true -w 300;
             columnLayout;
             
                 
-                attrFieldGrp -l "Rando Range(UNDER CONSTRUCTION)";
+                floatFieldGrp -l "xRandRange" -v1 $xRand;
+                floatFieldGrp -l "zRandRange" -v1 $zRand;
                 button -l "RanDoMize" -c MoveObjects;
-             
+                button -l "Duplicatatize" -c DuplicateObjects;
+                
             setParent ..;
         setParent ..;
      
