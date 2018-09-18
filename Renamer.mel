@@ -62,4 +62,4 @@ proc RenameLoop (string $nameFormat)
     }  
 }
 
-RenameLoop ("Buttholes_#_front_mike_wins_#_Times")
+RenameLoop ("IWIN_#_Jnt")
