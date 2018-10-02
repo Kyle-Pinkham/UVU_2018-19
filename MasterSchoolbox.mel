@@ -1,0 +1,84 @@
+global proc Master_Schoolbox() 
+{
+            // window declaration //
+
+    if ( `window -exists kp_schoolBox` )
+deleteUI kp_schoolBox;
+
+    //Variables
+    
+    int $boxWidth = 100;
+
+    window 
+	-t "schoolBox"
+	-w ($boxWidth + 10)
+	-mxb off
+	-mnb on
+	-resizeToFitChildren off
+	-sizeable on
+	-menuBar true
+	kp_schoolBox;
+	
+	
+	//------------------------------Control Color Changer Window -----------------------------------
+	// items in the first frame.
+	frameLayout -l "Control Colors"
+	    -collapsable on;
+	
+	// items in the first row
+	            					
+        	rowColumnLayout
+        	     -nc 2
+        	     -adj 1;
+        	         
+        	        button -l "test"
+        	        -w 10;
+        	        
+ 
+	
+        	columnLayout
+                -columnOffset "left" 5
+                mainFmColorColumn;
+                                //Color values sourced from Lester Bank's am_dock Rigging dock script
+        				gridLayout -width (400) -height (100) -numberOfRows 4 -numberOfColumns 8 -cellWidthHeight 30 20 -p mainFmColorColumn;
+        					iconTextButton -bgc 0 0.016 0.373 -rpt true -command "RecolorSelected(0)" ;
+        					iconTextButton -bgc .000 .000 .000 -rpt true -command "RecolorSelected(1)" ;
+        					iconTextButton -bgc .247 .247 .247 -rpt true -command "RecolorSelected(2)";
+        					iconTextButton -bgc .498 .498 .498 -rpt true -command "RecolorSelected(3)" ;
+        					iconTextButton -bgc 0.608 0 0.157 -rpt true -command "RecolorSelected(4)";
+        					iconTextButton -bgc 0 0 1 -rpt true -command "RecolorSelected(6)" ;
+        					iconTextButton -bgc 0 0.275 0.094 -rpt true -command "RecolorSelected(7)" ;
+        					iconTextButton -bgc 0.145 0 0.263 -rpt true -command "RecolorSelected(8)";
+        					iconTextButton -bgc 0.78 0 0.78 -rpt true -command "RecolorSelected(9)";
+        					iconTextButton -bgc 0.537 0.278 0.2 -rpt true -command "RecolorSelected(10)" ;
+        					iconTextButton -bgc 0.243 0.133 0.122 -rpt true -command "RecolorSelected(11)"; 
+        					iconTextButton -bgc 0.6 0.145 0 -rpt true -command "RecolorSelected(12)";
+        					iconTextButton -bgc 1 0 0 -rpt true -command "RecolorSelected(13)" ;
+        					iconTextButton -bgc 0 1 0 -rpt true  -command "RecolorSelected(14)" ;
+        					iconTextButton -bgc 0 0.255 0.6 -rpt true -command "RecolorSelected(15)" ;
+        					iconTextButton -bgc 1 1 1 -rpt true -command "RecolorSelected(16)" ;
+        					iconTextButton -bgc 1 1 0 -rpt true -command "RecolorSelected(17)" ;
+        					iconTextButton -bgc 0.388 0.863 1 -rpt true -command "RecolorSelected(18)" ;
+        					iconTextButton -bgc 0.263 1 0.635 -rpt true -command "RecolorSelected(19)" ;
+        					iconTextButton -bgc 1 0.686 0.686 -rpt true -command "RecolorSelected(20)" ;
+        					iconTextButton -bgc 0.89 0.675 0.475 -rpt true -command "RecolorSelected(21)" ;
+        					iconTextButton -bgc 1 1 0.384 -rpt true -command "RecolorSelected(22)";
+        					iconTextButton -bgc 0 0.6 0.325 -rpt true -command "RecolorSelected(23)";
+        					iconTextButton -bgc 0.627 0.412 0.188 -rpt true -command "RecolorSelected(24)"; 
+        					iconTextButton -bgc 0.62 0.627 0.188 -rpt true -command "RecolorSelected(25)";
+        					iconTextButton -bgc 0.408 0.627 0.188 -rpt true -command "RecolorSelected(26)";
+        					iconTextButton -bgc 0.188 0.627 0.365 -rpt true -command "RecolorSelected(27)" ;
+        					iconTextButton -bgc 0.188 0.627 0.627 -rpt true -command "RecolorSelected(28)" ;
+        					iconTextButton -bgc 0.188 0.404 0.627 -rpt true -command "RecolorSelected(29)" ;
+        					iconTextButton -bgc 0.435 0.188 0.627 -rpt true -command "RecolorSelected(30)";
+
+        				setParent ..;
+        				setParent ..;
+
+	
+	// --------------------------------------------------------------------------------------------------------------
+	
+	
+	showWindow kp_schoolBox;
+    
+}
